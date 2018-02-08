@@ -1,0 +1,9 @@
+---
+# tasks file for ansible-macos_setup
+
+- name: '[main] Include vars and tasks for homebrew packages and casks installation'
+  include_tasks: homebrew.yml
+
+- name: '[main] Include vars and tasks for Dock setup'
+  include_tasks: dock.yml
+...

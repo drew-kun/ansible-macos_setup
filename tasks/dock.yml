@@ -1,0 +1,19 @@
+---
+# tasks for setting up dock on MacOS
+
+- name: '[dock] Include variables for dock setup'
+  include_vars: dock.yml
+
+- name: '[dock] Remove all crap from Dock'
+  shell: "/usr/local/bin/dockutil --remove {{ item }}"
+  ignore_errors: true
+  with_items: "{{ macos_setup_dockitems_to_remove }}"
+
+- name: '[dock] Check if items in dock exist'
+  shell: "/usr/local/bin/dockutil --find {{ item.app }} || /usr/local/bin/dockutil --add {{ item.path }}"
+  with_items: "{{ macos_setup_dockitems_to_persist }}"
+
+- name: '[dock] Fix order'
+  shell: "/usr/local/bin/dockutil --move {{ item.app }} --position {{ item.pos }}"
+  with_items: "{{ macos_setup_dockitems_to_persist }}"
+...

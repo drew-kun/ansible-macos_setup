@@ -1,0 +1,150 @@
+---
+# defaults file for ansible-macos_setup
+
+macos_setup_homebrew_installed_packages:
+  - pkg: dockutil
+    install_opts: []
+  - pkg: brew-cask-completion
+    install_opts: []
+  - pkg: ssh-copy-id
+    install_opts: []
+  - pkg: pv                    # dep: gettext
+    install_opts: []
+  - pkg: automake              # dep: autoconf
+    install_opts: []
+  - pkg: cmake
+    install_opts: []
+  - pkg: dpkg
+    install_opts: []
+  - pkg: rpm
+    install_opts: []
+  - pkg: docker                # dep: go
+    install_opts: []
+  - pkg: ddclient
+    install_opts: []
+  - pkg: easy-tag
+    install_opts: []
+  - pkg: imagesnap
+    install_opts: []
+  - pkg: imagemagick           # dep: xz,libtool
+    install_opts: []
+  - pkg: iproute2mac           # linux 'ip' command stack
+    install_opts: []
+  - pkg: lsusb
+    install_opts: []
+  - pkg: lftp                  # ftps client
+    install_opts: []
+  - pkg: openssh
+    install_opts:
+      - '--with-ldns'
+  - pkg: pidof                 # display PID number for a given process name (Armitage depends)
+    install_opts: []
+  - pkg: p7zip                 # POSIX compatable 7zip archiver
+    install_opts: []
+  - pkg: python
+    install_opts:
+      - '--universal'
+      - '--with-berkeley-db4'
+      - '--with-tcl-tk'
+  - pkg: rename
+    install_opts: []
+  - pkg: tree
+    install_opts: []
+  - pkg: wget
+    install_opts: []
+  - pkg: svn
+    install_opts: []
+  - pkg: git
+    install_opts: []
+  - pkg: hub
+    install_opts: []
+  - pkg: tmux
+    install_opts: []
+  - pkg: tmux-cssh
+    install_opts: []
+  - pkg: reattach-to-user-namespace
+    install_opts:
+      - '--with-wrap-launchctl'
+      - '--with-wrap-pbcopy-and-pbpaste'
+  - pkg: mackup
+    install_opts: []
+  - pkg: htop-osx
+    install_opts: []
+  - pkg: cmatrix
+    install_opts: []
+  - pkg: gnu-typist
+    install_opts: []
+  - pkg: typespeed
+    install_opts: []
+  - pkg: aspell
+    install_opts:
+    - '--with-lang-en'
+    - '--with-lang-uk'
+    - '--with-lang-ru'
+    - '--with-lang-fr'
+    - '--with-lang-es'
+  - pkg: weechat
+    install_opts:
+      - '--with-aspell'
+      - '--with-curl'
+      - '--with-guile'
+      - '--with-lua'
+      - '--with-perl'
+      - '--with-python'
+      - '--with-ruby'
+  - pkg: bitlbee
+    install_opts:
+      - '--with-libotr'
+  - pkg: mutt
+    install_opts:
+      - '--with-confirm-attachment-patch'
+      - '--with-debug'
+      - '--with-gpgme'
+  - pkg: mailcheck
+    install_opts: []
+  - pkg: mc
+    install_opts: []
+  - pkg: nmap
+    install_opts:
+      - '--with-pygtk'         # Build Zenmap GUI
+  - pkg: rainbarf              # CPU, Memory, battery status for tmux
+    install_opts: []
+
+macos_setup_homebrew_uninstalled_packages: []
+
+macos_setup_homebrew_cask_apps:
+  - onyx
+  - appcleaner
+  - iterm2
+  - keka
+  - gpg-suite
+  - keepassxc
+  #- alfred  # requires interaction
+  #- atom  # broken formulae (SSL Cert problem, etc..)
+  - vlc
+  - virtualbox
+  - virtualbox-extension-pack
+  - vagrant
+  - tunnelblick
+  - transmission
+  - wireshark
+  - thunderbird
+  - firefox
+  - opera-developer
+  - google-chrome
+  - google-drive-file-stream
+  - dropbox
+  - calibre
+  - github
+  - githubpulse
+  - launchcontrol
+  - libreoffice
+  - limechat
+  - filezilla
+  - monolingual
+  - skype
+  - viber
+  - zenmap
+
+macos_setup_homebrew_uninstalled_cask_apps: [ colortester ]
+...
