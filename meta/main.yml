@@ -1,3 +1,4 @@
+---
 galaxy_info:
   author: Andrew Shagayev
   description: The role configures MacOS using homebrew, installs applications from cask and sets up dock.
@@ -21,3 +22,4 @@ galaxy_info:
 
 dependencies:
   - drew-kun.homebrew
+...
