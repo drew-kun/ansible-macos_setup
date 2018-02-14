@@ -121,6 +121,7 @@ macos_setup_homebrew_cask_apps:
   - keepassxc
   #- alfred  # requires interaction
   #- atom  # broken formulae (SSL Cert problem, etc..)
+  - handbrake
   - vlc
   - virtualbox
   - virtualbox-extension-pack
