@@ -10,12 +10,12 @@ galaxy_info:
   github_branch: master
 
   platforms:
-  - name: MacOS
+  - name: MacOSX
     versions:
     - all
 
   galaxy_tags:
-    - MacOS
+    - MacOSX
     - homebrew
     - cask
     - dock
