@@ -12,12 +12,14 @@
   # Universal way to specify environment variables for task (can also be playbook-wide):
   #environment:
   #  HOMEBREW_CASK_OPTS: '--appdir=~/Applications --fontdir=/Library/Fonts'
+  ignore_errors: yes
 
 - name: '[homebrew] remove all blacklisted cask applications'
   homebrew_cask:
     name: "{{ item }}"
     state: absent
     install_options: "appdir={{ macos_setup_homebrew_cask_appdir }}"
+  ignore_errors: yes
   with_items: "{{ macos_setup_homebrew_uninstalled_cask_apps }}"
 
 # BREW
@@ -28,10 +30,12 @@
     install_options: "{{ item.install_opts }}"
     #install_options: "{{ item.install_options | default(omit) }}"
     state: present
+  ignore_errors: yes
   with_items: "{{ macos_setup_homebrew_installed_packages }}"
 
 - name: '[homebrew] Ensure blacklisted homebrew packages are not installed'
   homebrew: "name={{ item }} state=absent"
+  ignore_errors: yes
   with_items: "{{ macos_setup_homebrew_uninstalled_packages }}"
 
 - name: '[homebrew] Upgrade all homebrew packages (if configured)'
