@@ -131,9 +131,9 @@ macos_setup_homebrew_cask_apps:
   - wireshark
   - thunderbird
   - firefox
-  - opera-developer
+  - caskroom/versions/opera-developer
   - google-chrome
-  - google-drive-file-stream
+  - google-drive-file-stream  # for MacOS >= 10.11 (EI Captain)
   - dropbox
   - calibre
   - github
