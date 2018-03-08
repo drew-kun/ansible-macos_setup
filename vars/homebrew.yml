@@ -30,7 +30,7 @@ macos_setup_homebrew_installed_packages:
     install_opts: []
   - pkg: iproute2mac           # linux 'ip' command stack
     install_opts: []
-  - pkg: lsusb
+  - pkg: jlhonora/lsusb/lsusb
     install_opts: []
   - pkg: lftp                  # ftps client
     install_opts: []
