@@ -9,6 +9,8 @@ Ansible role configures MacOS using [Homebrew][homebrew], installs applications 
 Requirements
 ------------
 
+NOTE: Role requires Fact Gathering by ansible!
+
 One of the following OS (or deriviatives):
   - MacOS
 
@@ -57,6 +59,7 @@ Example Playbook
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
     - hosts: dev_clients
+      gather_facts: yes
       roles:
          - role: drew-kun.macos_setup
 
