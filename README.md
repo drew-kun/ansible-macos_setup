@@ -8,10 +8,10 @@ Ansible playbook for MacOS automated configuration
 Does the following:
 
  - Installs [Homebrew][homebrew].
- - Installs custom set of Homebrew packages and applications from [caskroom][caskroom].
+ - Installs custom set of Homebrew packages and applications from Homebrew cask.
  - Configures MacOS Dock.
- - Configures the pf firewall using [drew-kun.pf][pf-role-link] ansible role
- - Configures the [drew-kun.sshd][sshd-role-link] ansible role
+ - Configures the pf firewall using [drew-kun.pf][pf-galaxy-link] ansible role
+ - Configures the [drew-kun.sshd][sshd-galaxy-link] ansible role
 
 Requirements
 ------------
@@ -85,4 +85,3 @@ Andrew Shagayev | [e-mail](mailto:drewshg@gmail.com)
 [mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [mit-link]: https://raw.githubusercontent.com/drew-kun/ansible-macos_setup/master/LICENSE
 [homebrew]: http://brew.sh/
-[caskroom]: https://caskroom.github.io/search
