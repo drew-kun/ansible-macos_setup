@@ -2,7 +2,6 @@ Ansible playbook: macsetup
 =========
 
 [![MIT licensed][mit-badge]][mit-link]
-[![Galaxy Role][role-badge]][galaxy-link]
 
 Ansible playbook for MacOS automated configuration
 
