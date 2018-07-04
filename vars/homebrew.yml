@@ -1,126 +1,113 @@
 ---
 # defaults file for ansible-macos_setup
 
-macos_setup_homebrew_installed_packages:
-  - pkg: dockutil
-    install_opts: []
-  - pkg: brew-cask-completion
-    install_opts: []
-  - pkg: ssh-copy-id
-    install_opts: []
-  - pkg: pv                    # dep: gettext
-    install_opts: []
-  - pkg: automake              # dep: autoconf
-    install_opts: []
-  - pkg: cmake
-    install_opts: []
-  - pkg: dpkg
-    install_opts: []
-  - pkg: rpm
-    install_opts: []
-  - pkg: docker                # dep: go
-    install_opts: []
-  - pkg: ddclient
-    install_opts: []
-  - pkg: easy-tag
-    install_opts: []
-  - pkg: imagesnap
-    install_opts: []
-  - pkg: imagemagick           # dep: xz,libtool
-    install_opts: []
-  - pkg: iproute2mac           # linux 'ip' command stack
-    install_opts: []
-  - pkg: jlhonora/lsusb/lsusb
-    install_opts: []
-  - pkg: lftp                  # ftps client
-    install_opts: []
-  - pkg: openssh
-    install_opts:
-      - '--with-ldns'
-  - pkg: pidof                 # display PID number for a given process name (Armitage depends)
-    install_opts: []
-  - pkg: p7zip                 # POSIX compatable 7zip archiver
-    install_opts: []
-  - pkg: python
-    install_opts:
-      - '--universal'
-      - '--with-berkeley-db4'
-      - '--with-tcl-tk'
-  - pkg: rename
-    install_opts: []
-  - pkg: tree
-    install_opts: []
-  - pkg: wget
-    install_opts: []
-  - pkg: svn
-    install_opts: []
-  - pkg: git
-    install_opts: []
-  - pkg: hub
-    install_opts: []
-  - pkg: tmux
-    install_opts: []
-  - pkg: tmux-cssh
-    install_opts: []
-  - pkg: reattach-to-user-namespace
-    install_opts:
-      - '--with-wrap-launchctl'
-      - '--with-wrap-pbcopy-and-pbpaste'
-  - pkg: mackup
-    install_opts: []
-  - pkg: htop-osx
-    install_opts: []
-  - pkg: cmatrix
-    install_opts: []
-  - pkg: gnu-typist
-    install_opts: []
-  - pkg: typespeed
-    install_opts: []
-  - pkg: aspell
-    install_opts:
-    - '--with-lang-en'
-    - '--with-lang-uk'
-    - '--with-lang-ru'
-    - '--with-lang-fr'
-    - '--with-lang-es'
-  - pkg: weechat
-    install_opts:
-      - '--with-aspell'
-      - '--with-curl'
-      - '--with-guile'
-      - '--with-lua'
-      - '--with-perl'
-      - '--with-python'
-      - '--with-ruby'
-  - pkg: bitlbee
-    install_opts:
-      - '--with-libotr'
-  - pkg: mutt
-    install_opts:
-      - '--with-confirm-attachment-patch'
-      - '--with-debug'
-      - '--with-gpgme'
-  - pkg: mailcheck
-    install_opts: []
-  - pkg: mc
-    install_opts: []
-  - pkg: nmap
-    install_opts:
-      - '--with-pygtk'         # Build Zenmap GUI
-  - pkg: rainbarf              # CPU, Memory, battery status for tmux
-    install_opts: []
+macsetup_homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+  - homebrew/cask-fonts     # Casks that install fonts (nerdfonts etc.)
+  - homebrew/cask-versions  # Alternate casks versions (e.g. betas, nightly releases, old versions): opera-developer
+  - homebrew/cask-drivers   # Casks that install drivers for various devices
+  - homebrew/cask-eid       # Casks that install electronic identity card software of various countries
 
-macos_setup_homebrew_uninstalled_packages: []
+  # Other taps:
+  - theseal/ssh-askpass # Askpass for KeepassXC ssh-agent integration
+  - homebrew/bundle     # Enables 'brew bundle' for using Brewfile (like Ruby Gemfi↳ le)
+  - gapple/services     # Enables 'brew services' command
+  - brona/iproute2mac   # Enables linux 'ip' set of commands
+  - jlhonora/lsusb      # Enables 'lsusb' command on macos
+  #- kevwil/patches     # Enables 'mutt' patches
 
-macos_setup_homebrew_cask_apps:
+macsetup_homebrew_installed_packages:
+  - dockutil
+  - brew-cask-completion
+  - ssh-copy-id
+  - theseal/ssh-askpass/ssh-askpass   # ssh-agent integration for KeepassXC
+  - name: pv              # dep: gettext
+    install_options: with-gettext
+  - automake              # dep: autoconf
+  - cmake
+  - dpkg
+  - rpm
+  - docker                # dep: go
+  - ddclient
+  - easy-tag
+  - imagesnap
+  - imagemagick           # dep: xz,libtool
+  - iproute2mac           # linux 'ip' command stack. Strangely, impossible to install with full tap path.
+  - jlhonora/lsusb/lsusb
+  - lftp                  # ftps client
+  - name: openssh
+    install_options: with-ldns
+  - pidof                 # display PID number for a given process name (Armitage depends)
+  - p7zip                 # POSIX compatable 7zip archiver
+  - name: python
+    install_options:
+      - universal
+      - with-berkeley-db4
+      - with-tcl-tk
+  - rename
+  - tree
+  - wget
+  - svn
+  - git
+  - hub
+  - tmux
+  - tmux-cssh
+  - name: reattach-to-user-namespace
+    install_options:
+      - with-wrap-launchctl
+      - with-wrap-pbcopy-and-pbpaste
+  - mackup
+  - htop-osx
+  - cmatrix
+  - gnu-typist
+  - typespeed
+  - name: aspell
+    install_options:
+    - with-lang-en
+    - with-lang-uk
+    - with-lang-ru
+    - with-lang-fr
+    - with-lang-es
+  - name: weechat
+    install_options:
+      - with-aspell
+      - with-curl
+      - with-guile
+      - with-lua
+      - with-perl
+      - with-python
+      - with-ruby
+  - name: bitlbee
+    install_options:
+      - with-libotr
+  - name: mutt
+    install_options:
+      - with-debug
+      - with-gettext
+      - with-gpgme
+      - with-libidn
+      - with-s-lang
+  - mailcheck
+  - mc
+  - name: nmap
+    install_options:
+      - with-pygtk        # Build Zenmap GUI
+  - rainbarf              # CPU, Memory, battery status for tmux
+
+macsetup_homebrew_uninstalled_packages: []
+
+macsetup_homebrew_cask_appdir: ~/Applications
+
+macsetup_homebrew_cask_apps:
   - onyx
   - appcleaner
   - iterm2
   - keka
   - gpg-suite
   - keepassxc
-  #- alfred  # requires interaction
-  #- atom  # broken formulae (SSL Cert problem, etc..)
+  - alfred
+  - atom
   - handbrake
   - vlc
   - virtualbox
@@ -145,7 +132,10 @@ macos_setup_homebrew_cask_apps:
   - monolingual
   - skype
   - viber
+  - telegram
+  - signal
+  - riot
   - zenmap
 
-macos_setup_homebrew_uninstalled_cask_apps: [ colortester ]
+macsetup_homebrew_uninstalled_cask_apps: [ colortester ]
 ...

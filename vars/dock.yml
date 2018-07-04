@@ -1,98 +1,104 @@
 ---
-macos_setup_dockitems_to_remove:
-  - "Siri"
-  - "Launchpad"
-  - "Mail"
-  - "Safari"
-  - "Contacts"
-  - "Notes"
-  - "Reminders"
-  - "Maps"
-  - "Photos"
-  - "Messages"
-  - "FaceTime"
-  - "iTunes"
-  - "iBooks"
-  - "Calendar"
-  - "'App Store'" # names containing spaces must be in single quoted within double quotes
-                  # otherwise diskutil takes it as two separate arguments
-macos_setup_dockitems_to_persist:
-  - app: "AppCleaner"
-    path: "{{ homebrew_cask_appdir }}/AppCleaner.app"
+macsetup_remove_dockitems:
+  - Siri
+  - Launchpad
+  - Mail
+  - Safari
+  - Contacts
+  - Notes
+  - Reminders
+  - Maps
+  - Photos
+  - Messages
+  - FaceTime
+  - iTunes
+  - iBooks
+  - Calendar
+  - App Store
+
+macsetup_add_dockitems:
+  - name: AppCleaner
+    path: "{{ macsetup_homebrew_cask_appdir }}/AppCleaner.app"
     pos: 1
-  - app: "'Google Chrome'"  # names containing spaces must be in single quotes
-    path: "{{ homebrew_cask_appdir }}/'Google Chrome.app'"
+  - name: Google Chrome
+    path: "{{ macsetup_homebrew_cask_appdir }}/Google Chrome.app"
     pos: 2
-  - app: "Firefox"
-    path: "{{ homebrew_cask_appdir }}/Firefox.app"
+  - name: Firefox
+    path: "{{ macsetup_homebrew_cask_appdir }}/Firefox.app"
     pos: 3
-  - app: "'Opera Developer'"
-    path: "{{ homebrew_cask_appdir }}/'Opera Developer.app'"
+  - name: Opera Developer
+    path: "{{ macsetup_homebrew_cask_appdir }}/Opera Developer.app"
     pos: 4
-  - app: "Thunderbird"
-    path: "{{ homebrew_cask_appdir }}/Thunderbird.app"
+  - name: Thunderbird
+    path: "{{ macsetup_homebrew_cask_appdir }}/Thunderbird.app"
     pos: 5
-  - app: "Viber"
-    path: "{{ homebrew_cask_appdir }}/Viber.app"
+  - name: Viber
+    path: "{{ macsetup_homebrew_cask_appdir }}/Viber.app"
     pos: 6
-  - app: "Skype"
-    path: "{{ homebrew_cask_appdir }}/Skype.app"
+  - name: Skype
+    path: "{{ macsetup_homebrew_cask_appdir }}/Skype.app"
     pos: 7
-#  - app: "Telegram"
-#    path: "{{ homebrew_cask_appdir }}/Telegram.app"
-#    pos: 8
-  - app: "Transmission"
-    path: "{{ homebrew_cask_appdir }}/Transmission.app"
+  - name: Telegram
+    path: "{{ macsetup_homebrew_cask_appdir }}/Telegram.app"
+    pos: 8
+  - name: Signal
+    path: "{{ macsetup_homebrew_cask_appdir }}/Signal.app"
     pos: 9
-  - app: "Keka"
-    path: "{{ homebrew_cask_appdir }}/Keka.app"
+  - name: Riot
+    path: "{{ macsetup_homebrew_cask_appdir }}/Riot.app"
     pos: 10
-  - app: "KeePassXC"
-    path: "{{ homebrew_cask_appdir }}/KeePassXC.app"
+  - name: Transmission
+    path: "{{ macsetup_homebrew_cask_appdir }}/Transmission.app"
     pos: 11
-#  - app: "Atom"
-#    path: "{{ homebrew_cask_appdir }}/Atom.app"
-#    pos: 12
-  - app: "'GitHub Desktop'"
-    path: "{{ homebrew_cask_appdir }}/'GitHub Desktop.app'"
+  - name: Keka
+    path: "{{ macsetup_homebrew_cask_appdir }}/Keka.app"
+    pos: 12
+  - name: KeePassXC
+    path: "{{ macsetup_homebrew_cask_appdir }}/KeePassXC.app"
     pos: 13
-  - app: "Grab"
-    path: "/Applications/Utilities/Grab.app"
+  - name: Atom
+    path: "{{ macsetup_homebrew_cask_appdir }}/Atom.app"
     pos: 14
-  - app: "Calculator"
-    path: "/Applications/Calculator.app"
+  - name: GitHub Desktop
+    path: "{{ macsetup_homebrew_cask_appdir }}/GitHub Desktop.app"
     pos: 15
-  - app: "'System Preferences'"
-    path: "/Applications/'System Preferences.app'"
+  - name: Grab
+    path: "/Applications/Utilities/Grab.app"
     pos: 16
-  - app: "VirtualBox"
-    path: "/Applications/VirtualBox.app"
+  - name: Calculator
+    path: "/Applications/Calculator.app"
     pos: 17
-  - app: "LaunchControl"
-    path: "{{ homebrew_cask_appdir }}/LaunchControl.app"
+  - name: System Preferences
+    path: "/Applications/System Preferences.app"
     pos: 18
-  - app: "Console"
-    path: '/Applications/Utilities/Console.app'
+  - name: VirtualBox
+    path: "/Applications/VirtualBox.app"
     pos: 19
-  - app: "iTerm"
-    path: "{{ homebrew_cask_appdir }}/iTerm.app"
+  - name: LaunchControl
+    path: "{{ macsetup_homebrew_cask_appdir }}/LaunchControl.app"
     pos: 20
-  - app: "'Activity Monitor'"
-    path: "/Applications/Utilities/'Activity Monitor.app'"
+  - name: Console
+    path: "/Applications/Utilities/Console.app"
     pos: 21
-  - app: "calibre"
-    path: "{{ homebrew_cask_appdir }}/calibre.app"
+  - name: iTerm
+    path: "{{ macsetup_homebrew_cask_appdir }}/iTerm.app"
     pos: 22
-  - app: "'Network Utility'"
-    path: "/System/Library/CoreServices/Applications/'Network Utility.app'"
+  - name: Activity Monitor
+    path: "/Applications/Utilities/Activity Monitor.app"
     pos: 23
-  - app: "'Screen Sharing'"
-    path: "/System/Library/CoreServices/Applications/'Screen Sharing.app'"
+  - name: calibre
+    path: "{{ macsetup_homebrew_cask_appdir }}/calibre.app"
     pos: 24
-  - app: "Wireshark"
+  - name: Network Utility
+    path: "/System/Library/CoreServices/Applications/Network Utility.app"
+    pos: 25
+  - name: Screen Sharing
+    path: "/System/Library/CoreServices/Applications/Screen Sharing.app"
+    pos: 26
+  - name: Wireshark
     path: "/Applications/Wireshark.app"
-    pos: 25
-  - app: "Zenmap"
+    pos: 27
+  - name: Zenmap
     path: "/Applications/Zenmap.app"
-    pos: 25
+    pos: 28
 ...

@@ -1,67 +1,67 @@
-Ansible role: macos_setup
+ansible-macsetup_playbook
 =========
 
 [![MIT licensed][mit-badge]][mit-link]
 [![Galaxy Role][role-badge]][galaxy-link]
 
-Ansible role configures MacOS using [Homebrew][homebrew], installs applications from cask and sets up dock.
+Ansible playbook for MacOS automated configuration
+
+Does the following:
+
+ - Installs [Homebrew][homebrew].
+ - Installs custom set of Homebrew packages and applications from [caskroom][caskroom].
+ - Configures MacOS Dock.
+ - Configures the pf firewall using [drew_kun.pf][pf-role-link] ansible role
+ - Configures the [drew_kun.sshd][sshd-role-link] ansible role
 
 Requirements
 ------------
 
 NOTE: Role requires Fact Gathering by ansible!
 
-One of the following OS (or deriviatives):
-  - MacOS
+MacOS system on configured machine
 
-Role Variables
---------------
+Playbook Variables
+------------------
 
-    # Homebrew
-    macos_setup_homebrew_upgrade_all_packages: yes | no             # Does brew upgrade if homebrew is already installed
-    macos_setup_homebrew_use_brewfile: yes                          # Uses brewfile for Homebrew (like Gemfile for ruby)
-    macos_setup_homebrew_brewfile_dir: '~'                          # Where to look for brewfile
-    macos_setup_homebrew_cask_appdir: "{{ homebrew_cask_appdir }}"  # By default: ~/Applications
-                                                                    # This var comes from drew-kun.homebrew role
-
-    macos_setup_homebrew_installed_packages:                        # List of packages to be installed from homebrew
-    - pkg: dockutil                                                 # Package name
-        install_opts: []                                            # List of Homebrew install options for that package
-
-    macos_setup_homebrew_uninstalled_packages: []                   # List of packages to be removed
-
-    macos_setup_homebrew_cask_apps: []                              # List of casks to be installed
-    macos_setup_homebrew_uninstalled_cask_apps: []                  # List of casks to be removed
-
-    # MacOS Dock
-    macos_setup_dockitems_to_remove:                                # List of items to be removed from MacOS Dock
-    - "Calendar"
-    - "'App Store'"                                                 # NOTE: names containing spaces must be quoted twice
-
-    macos_setup_dockitems_to_persist: []
-    - app: "'Google Chrome'"                                        # NOTE: names containing spaces must be quoted twice
-      path: "{{ homebrew_cask_appdir }}/'Google Chrome.app'"        # Path to the app
-      pos: 2                                                        # Position number in Dock (left to right)
-
+| Variable | Description | Default |
+|----------|-------------|---------|
+| **macsetup_homebrew_cask_appdir** | Homebrew cask 'Applications' directory | `~/Applications` |
+| **macsetup_homebrew_taps** | List of taps to be used in Homebrew | see [`vars/homebrew.yml`](vars/homebrew.yml) |
+| **macsetup_homebrew_installed_packages** | List of packages to be installed from Homebrew | see [`vars/homebrew.yml`](vars/homebrew.yml) |
+| **macsetup_homebrew_cask_apps** | List of apps to be installed from Homebrew cask | see [`vars/homebrew.yml`](vars/homebrew.yml) |
+| **macsetup_remove_dockitems[]** | Remove only specified dock items. Only used if **macdock_items_remove_all** is set to `no` | see [`vars/dock.yml`](vars/dock.yml) |
+| **macsetup_add_dockitems[]** | List of items to be added to dock | see [`vars/dock.yml`](vars/dock.yml) |
 
 Dependencies
 ------------
 
- - [drew-kun.homebrew][homebrew-galaxy-link]
+ - [elliotweiser.osx-command-line-tools][dep-osx-clt-role]
+ - [drew_kun.homebrew][homebrew-galaxy-link]
+ - [drew_kun.macdock][macdock-galaxy-link]
+ - [drew_kun.terminus_powerline][terminus_powerline-galaxy-link]
+ - [drew_kun.nerdfonts][nerdfonts-galaxy-link]
+ - [drew_kun.macos_terminal][macos_terminal-galaxy-link]
+ - [drew_kun.ohmyzsh][ohmyzsh-galaxy-link]
+ - [drew_kun.pf][pf-galaxy-link]
+ - [drew_kun.sshd][sshd-galaxy-link]
 
 Install via ansible-galaxy:
 
-    ansible-galaxy install drew-kun.homebrew
+    ansible-galaxy install elliotweiser.osx-command-line-tools \
+                           drew_kun.homebrew \
+                           drew_kun.macdock \
+                           drew_kun.nerdfonts \
+                           drew_kun.terminus_powerline\
+                           drew_kun.macos_terminal \
+                           drew_kun.ohmyzsh \
+                           drew_kun.pf \
+                           drew_kun.sshd
 
-Example Playbook
-----------------
+Example Using Playbook
+----------------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: dev_clients
-      gather_facts: yes
-      roles:
-         - role: drew-kun.macos_setup
+    ansible-playbook --user user1 -k macsetup_playbook.yml
 
 License
 -------
@@ -73,10 +73,17 @@ Author Information
 
 Andrew Shagayev | [e-mail](mailto:drewshg@gmail.com)
 
-[role-badge]: https://img.shields.io/badge/role-drew--kun.macos__setup-green.svg
-[galaxy-link]: https://galaxy.ansible.com/drew-kun/macos_setup/
-[homebrew-galaxy-link]: https://galaxy.ansible.com/drew-kun/homebrew/
+[homebrew-galaxy-link]: https://galaxy.ansible.com/drew_kun/homebrew/
+[dep-osx-clt-role]: https://galaxy.ansible.com/elliotweiser/osx-command-line-tools/
+[macdock-galaxy-link]: https://galaxy.ansible.com/drew_kun/macdock/
+[nerdfonts-galaxy-link]: https://galaxy.ansible.com/drew_kun/nerdfonts/
+[terminus_powerline-galaxy-link]: https://galaxy.ansible.com/drew_kun/terminus_powerline/
+[macos_terminal-galaxy-link]: https://galaxy.ansible.com/drew_kun/macos_terminal/
+[ohmyzsh-galaxy-link]: https://galaxy.ansible.com/drew_kun/ohmyzsh/
+[pf-galaxy-link]: https://galaxy.ansible.com/drew_kun/pf/
+[sshd-galaxy-link]: https://galaxy.ansible.com/drew_kun/sshd/
 
 [mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
-[mit-link]: https://raw.githubusercontent.com/drew-kun/ansible-macos_setup/master/LICENSE
+[mit-link]: https://raw.githubusercontent.com/drew_kun/ansible-macos_setup/master/LICENSE
 [homebrew]: http://brew.sh/
+[caskroom]: https://caskroom.github.io/search

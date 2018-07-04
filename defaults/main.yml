@@ -1,9 +1,0 @@
----
-# defaults file for ansible-macos_setup
-
-macos_setup_homebrew_upgrade_all_packages: no
-macos_setup_homebrew_use_brewfile: yes
-macos_setup_homebrew_brewfile_dir: '~'
-
-macos_setup_homebrew_cask_appdir: "{{ homebrew_cask_appdir }}"  # by default: ~/Applications
-...
