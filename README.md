@@ -10,8 +10,8 @@ Does the following:
  - Installs [Homebrew][homebrew].
  - Installs custom set of Homebrew packages and applications from [caskroom][caskroom].
  - Configures MacOS Dock.
- - Configures the pf firewall using [drew_kun.pf][pf-role-link] ansible role
- - Configures the [drew_kun.sshd][sshd-role-link] ansible role
+ - Configures the pf firewall using [drew-kun.pf][pf-role-link] ansible role
+ - Configures the [drew-kun.sshd][sshd-role-link] ansible role
 
 Requirements
 ------------
@@ -36,26 +36,26 @@ Dependencies
 ------------
 
  - [elliotweiser.osx-command-line-tools][dep-osx-clt-role]
- - [drew_kun.homebrew][homebrew-galaxy-link]
- - [drew_kun.macdock][macdock-galaxy-link]
- - [drew_kun.terminus_powerline][terminus_powerline-galaxy-link]
- - [drew_kun.nerdfonts][nerdfonts-galaxy-link]
- - [drew_kun.macos_terminal][macos_terminal-galaxy-link]
- - [drew_kun.ohmyzsh][ohmyzsh-galaxy-link]
- - [drew_kun.pf][pf-galaxy-link]
- - [drew_kun.sshd][sshd-galaxy-link]
+ - [drew-kun.homebrew][homebrew-galaxy-link]
+ - [drew-kun.macdock][macdock-galaxy-link]
+ - [drew-kun.terminus_powerline][terminus_powerline-galaxy-link]
+ - [drew-kun.nerdfonts][nerdfonts-galaxy-link]
+ - [drew-kun.macos_terminal][macos_terminal-galaxy-link]
+ - [drew-kun.ohmyzsh][ohmyzsh-galaxy-link]
+ - [drew-kun.pf][pf-galaxy-link]
+ - [drew-kun.sshd][sshd-galaxy-link]
 
 Install via ansible-galaxy:
 
     ansible-galaxy install elliotweiser.osx-command-line-tools \
-                           drew_kun.homebrew \
-                           drew_kun.macdock \
-                           drew_kun.nerdfonts \
-                           drew_kun.terminus_powerline\
-                           drew_kun.macos_terminal \
-                           drew_kun.ohmyzsh \
-                           drew_kun.pf \
-                           drew_kun.sshd
+                           drew-kun.homebrew \
+                           drew-kun.macdock \
+                           drew-kun.nerdfonts \
+                           drew-kun.terminus_powerline\
+                           drew-kun.macos_terminal \
+                           drew-kun.ohmyzsh \
+                           drew-kun.pf \
+                           drew-kun.sshd
 
 Example Using Playbook
 ----------------------
@@ -72,7 +72,7 @@ Author Information
 
 Andrew Shagayev | [e-mail](mailto:drewshg@gmail.com)
 
-[homebrew-galaxy-link]: https://galaxy.ansible.com/drew_kun/homebrew/
+[homebrew-galaxy-link]: https://galaxy.ansible.com/drew-kun/homebrew/
 [dep-osx-clt-role]: https://galaxy.ansible.com/elliotweiser/osx-command-line-tools/
 [macdock-galaxy-link]: https://galaxy.ansible.com/drew-kun/macdock/
 [nerdfonts-galaxy-link]: https://galaxy.ansible.com/drew-kun/nerdfonts/
@@ -83,6 +83,6 @@ Andrew Shagayev | [e-mail](mailto:drewshg@gmail.com)
 [sshd-galaxy-link]: https://galaxy.ansible.com/drew-kun/sshd/
 
 [mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
-[mit-link]: https://raw.githubusercontent.com/drew_kun/ansible-macos_setup/master/LICENSE
+[mit-link]: https://raw.githubusercontent.com/drew-kun/ansible-macos_setup/master/LICENSE
 [homebrew]: http://brew.sh/
 [caskroom]: https://caskroom.github.io/search

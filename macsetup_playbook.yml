@@ -12,7 +12,7 @@
     macsetup_homebrew_cask_appdir: ~/Applications # also used in ./vars/dock.yml
 
   roles:
-#    - role: drew_kun.homebrew
+#    - role: drew-kun.homebrew
 #      homebrew_installed_packages: "{{ macsetup_homebrew_installed_packages }}"
 #      homebrew_uninstalled_packages: []
 #      homebrew_upgrade_all_packages: no
@@ -23,16 +23,16 @@
 #      homebrew_use_brewfile: yes
 #      homebrew_brewfile_dir: '~'
 
-#    - role: drew_kun.macdock
+#    - role: drew-kun.macdock
 #      macdock_remove_all: no
 #      macdock_remove_items: "{{ macsetup_remove_dockitems }}"
 #      macdock_add_items: "{{ macsetup_add_dockitems }}"
 
-    - role: drew_kun.macos_terminal
+    - role: drew-kun.macos_terminal
 
-#    - role: drew_kun.ohmyzsh
+#    - role: drew-kun.ohmyzsh
 
-#    - role: drew_kun.pf
+#    - role: drew-kun.pf
 
-#    - role: drew_kun.sshd
+#    - role: drew-kun.sshd
 ...
