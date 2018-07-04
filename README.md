@@ -1,4 +1,4 @@
-ansible-macsetup_playbook
+Ansible playbook: macsetup
 =========
 
 [![MIT licensed][mit-badge]][mit-link]
