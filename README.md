@@ -75,13 +75,13 @@ Andrew Shagayev | [e-mail](mailto:drewshg@gmail.com)
 
 [homebrew-galaxy-link]: https://galaxy.ansible.com/drew_kun/homebrew/
 [dep-osx-clt-role]: https://galaxy.ansible.com/elliotweiser/osx-command-line-tools/
-[macdock-galaxy-link]: https://galaxy.ansible.com/drew_kun/macdock/
-[nerdfonts-galaxy-link]: https://galaxy.ansible.com/drew_kun/nerdfonts/
-[terminus_powerline-galaxy-link]: https://galaxy.ansible.com/drew_kun/terminus_powerline/
-[macos_terminal-galaxy-link]: https://galaxy.ansible.com/drew_kun/macos_terminal/
-[ohmyzsh-galaxy-link]: https://galaxy.ansible.com/drew_kun/ohmyzsh/
-[pf-galaxy-link]: https://galaxy.ansible.com/drew_kun/pf/
-[sshd-galaxy-link]: https://galaxy.ansible.com/drew_kun/sshd/
+[macdock-galaxy-link]: https://galaxy.ansible.com/drew-kun/macdock/
+[nerdfonts-galaxy-link]: https://galaxy.ansible.com/drew-kun/nerdfonts/
+[terminus_powerline-galaxy-link]: https://galaxy.ansible.com/drew-kun/terminus_powerline/
+[macos_terminal-galaxy-link]: https://galaxy.ansible.com/drew-kun/macos_terminal/
+[ohmyzsh-galaxy-link]: https://galaxy.ansible.com/drew-kun/ohmyzsh/
+[pf-galaxy-link]: https://galaxy.ansible.com/drew-kun/pf/
+[sshd-galaxy-link]: https://galaxy.ansible.com/drew-kun/sshd/
 
 [mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [mit-link]: https://raw.githubusercontent.com/drew_kun/ansible-macos_setup/master/LICENSE
