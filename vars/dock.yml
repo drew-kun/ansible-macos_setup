@@ -17,6 +17,13 @@ macsetup_remove_dockitems:
   - App Store
 
 macsetup_add_dockitems:
+# others
+  - name: Applications
+    path: "/Applications"
+    pos: first
+    section: others  # `apps | others`. If not specified, it defaults to `apps`
+
+# apps
   - name: AppCleaner
     path: "{{ macsetup_homebrew_cask_appdir }}/AppCleaner.app"
     pos: 1

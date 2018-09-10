@@ -1,6 +1,6 @@
 ---
 - hosts: macbooks
-  #hosts: localhost
+#- hosts: localhost
   #connection: local
 
   vars_files:
@@ -28,7 +28,7 @@
 #      macdock_remove_items: "{{ macsetup_remove_dockitems }}"
 #      macdock_add_items: "{{ macsetup_add_dockitems }}"
 
-    - role: drew-kun.macos_terminal
+#    - role: drew-kun.macos_terminal
 
 #    - role: drew-kun.ohmyzsh
 
