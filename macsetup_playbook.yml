@@ -13,10 +13,6 @@
   - vars/feffi.macos-defaults/finder.yml
   - vars/feffi.macos-defaults/appstore.yml
 
-  vars:
-    #ansible_python_interpreter: /usr/local/bin/python3
-    macsetup_homebrew_cask_appdir: ~/Applications  # also used in ./vars/dock.yml
-
   pre_tasks:
   - name: "[pre_tasks] Include vars from Darwin.yml"
     include_vars: Darwin.yml
@@ -30,7 +26,7 @@
   roles:
 #  - role: geerlingguy.homebrew  # TESTED
 
-  - role: drew-kun.mas
+#  - role: drew-kun.mas
 
 #  - role: drew-kun.macdock  # TESTED
 
@@ -39,9 +35,7 @@
 #  - role: drew-kun.terminus_powerline # TESTED
 
 #  - role: drew-kun.macos_terminal  # TESTED
-#    macos_terminal_colorscheme: Cipherpunk
-    #macos_terminal_colorscheme: Solarized_Dark_Custom
-    #macos_terminal_colorscheme: Nord_Custom
+#    macos_terminal_colorscheme: Cipherpunk  # Solarized_Dark_Custom | Nord_Custom | Cipherpunk
 
 #  - role: drew-kun.ohmyzsh  # TESTED  (ColorLS does not work)
 #
@@ -58,12 +52,12 @@
 
 
 ## DEFAULTS:
-  - role: feffi.macos-defaults
-    macos_defaults:
-      defaults: "{{
-        macsetup_defaults_system +
-        macsetup_defaults_finder +
-        macsetup_defaults_appstore }}"
+#  - role: feffi.macos-defaults
+#    macos_defaults:
+#      defaults: "{{
+#        macsetup_defaults_system +
+#        macsetup_defaults_finder +
+#        macsetup_defaults_appstore }}"
 
 #  post_tasks:
 #  ## REBOOT

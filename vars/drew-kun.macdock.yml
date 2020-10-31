@@ -28,49 +28,49 @@ macdock_add_items:
 
 # apps
 - name: AppCleaner
-  path: "{{ macsetup_homebrew_cask_appdir }}/AppCleaner.app"
+  path: "{{ homebrew_cask_appdir }}/AppCleaner.app"
   pos: 1
 - name: Google Chrome
-  path: "{{ macsetup_homebrew_cask_appdir }}/Google Chrome.app"
+  path: "{{ homebrew_cask_appdir }}/Google Chrome.app"
   pos: 2
 - name: Firefox
-  path: "{{ macsetup_homebrew_cask_appdir }}/Firefox.app"
+  path: "{{ homebrew_cask_appdir }}/Firefox.app"
   pos: 3
 - name: Opera Developer
-  path: "{{ macsetup_homebrew_cask_appdir }}/Opera Developer.app"
+  path: "{{ homebrew_cask_appdir }}/Opera Developer.app"
   pos: 4
 - name: Thunderbird
-  path: "{{ macsetup_homebrew_cask_appdir }}/Thunderbird.app"
+  path: "{{ homebrew_cask_appdir }}/Thunderbird.app"
   pos: 5
 - name: Viber
-  path: "{{ macsetup_homebrew_cask_appdir }}/Viber.app"
+  path: "{{ homebrew_cask_appdir }}/Viber.app"
   pos: 6
 - name: Skype
-  path: "{{ macsetup_homebrew_cask_appdir }}/Skype.app"
+  path: "{{ homebrew_cask_appdir }}/Skype.app"
   pos: 7
 - name: Telegram  # Must be installed from App Store with 'mas' role
   path: "/Applications/Telegram.app"
   pos: 8
 - name: Signal
-  path: "{{ macsetup_homebrew_cask_appdir }}/Signal.app"
+  path: "{{ homebrew_cask_appdir }}/Signal.app"
   pos: 9
 - name: Element   # Formerly known as Riot
-  path: "{{ macsetup_homebrew_cask_appdir }}/Element.app"
+  path: "{{ homebrew_cask_appdir }}/Element.app"
   pos: 10
 - name: Transmission
-  path: "{{ macsetup_homebrew_cask_appdir }}/Transmission.app"
+  path: "{{ homebrew_cask_appdir }}/Transmission.app"
   pos: 11
 - name: Keka
-  path: "{{ macsetup_homebrew_cask_appdir }}/Keka.app"
+  path: "{{ homebrew_cask_appdir }}/Keka.app"
   pos: 12
 - name: KeePassXC
-  path: "{{ macsetup_homebrew_cask_appdir }}/KeePassXC.app"
+  path: "{{ homebrew_cask_appdir }}/KeePassXC.app"
   pos: 13
 - name: Visual Studio Code
-  path: "{{ macsetup_homebrew_cask_appdir }}/Visual Studio Code.app"
+  path: "{{ homebrew_cask_appdir }}/Visual Studio Code.app"
   pos: 14
 - name: GitHub Desktop
-  path: "{{ macsetup_homebrew_cask_appdir }}/GitHub Desktop.app"
+  path: "{{ homebrew_cask_appdir }}/GitHub Desktop.app"
   pos: 15
 - name: "{{ macsetup_screenshot_app }}"
   path: "/System/Applications/Utilities/{{ macsetup_screenshot_app }}.app"
@@ -85,19 +85,19 @@ macdock_add_items:
   path: "/Applications/VirtualBox.app"
   pos: 19
 - name: LaunchControl
-  path: "{{ macsetup_homebrew_cask_appdir }}/LaunchControl.app"
+  path: "{{ homebrew_cask_appdir }}/LaunchControl.app"
   pos: 20
 - name: Console
   path: "/System/Applications/Utilities/Console.app"
   pos: 21
 - name: iTerm
-  path: "{{ macsetup_homebrew_cask_appdir }}/iTerm.app"
+  path: "{{ homebrew_cask_appdir }}/iTerm.app"
   pos: 22
 - name: Activity Monitor
   path: "/System/Applications/Utilities/Activity Monitor.app"
   pos: 23
 - name: calibre
-  path: "{{ macsetup_homebrew_cask_appdir }}/calibre.app"
+  path: "{{ homebrew_cask_appdir }}/calibre.app"
   pos: 24
 - name: Network Utility
   path: "/System/Library/CoreServices/Applications/Network Utility.app"
@@ -109,7 +109,7 @@ macdock_add_items:
   path: "/Applications/Wireguard.app"
   pos: 27
 - name: Wireshark
-  path: "{{ macsetup_homebrew_cask_appdir }}/Wireshark.app"
+  path: "{{ homebrew_cask_appdir }}/Wireshark.app"
   #path: "/Applications/Wireshark.app"
   pos: 28
 - name: Zenmap
