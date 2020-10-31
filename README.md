@@ -47,16 +47,7 @@ Dependencies
 
 Install via ansible-galaxy:
 
-    ansible-galaxy install elliotweiser.osx-command-line-tools \
-                           drew-kun.homebrew \
-                           drew-kun.macdock \
-                           drew-kun.nerdfonts \
-                           drew-kun.terminus_powerline\
-                           drew-kun.macos_terminal \
-                           drew-kun.ohmyzsh \
-                           drew-kun.mpd \
-                           drew-kun.pf \
-                           drew-kun.sshd
+    ansible-galaxy install -r requirements.yml --force
 
 Example Using Playbook
 ----------------------

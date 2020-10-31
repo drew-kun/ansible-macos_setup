@@ -27,3 +27,12 @@
 
 - src: https://github.com/drew-kun/ansible-vim.git
   name: drew-kun.vim
+
+- src: https://github.com/drew-kun/ansible-mpd.git
+  name: drew-kun.mpd
+
+- src: https://github.com/drew-kun/ansible-pf.git
+  name: drew-kun.pf
+
+- src: https://github.com/drew-kun/ansible-sshd.git
+  name: drew-kun.sshd
