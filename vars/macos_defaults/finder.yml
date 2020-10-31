@@ -1,0 +1,26 @@
+---
+macsetup_finder:
+  # - Show Hidden files in Finder:
+  #   defaults write com.apple.finder AppleShowAllFiles -string YES
+  - { domain: "com.apple.finder", key: "AppleShowAllFiles", state: "present", type: "string", value: "YES" }
+
+  # - Finder > Preferences > Show wraning before changing an extension: false:
+  #   defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+  - { domain: "com.apple.finder", key: "FXEnableExtensionChangeWarning", state: "present", type: "boolean", value: "false" }
+
+  # - Finder > Preferences > Show wraning before removing from iCloud Drive: false:
+  #   defaults write com.apple.finder FXEnableRemoveFromICloudDriveWarning -bool false
+  - { domain: "com.apple.finder", key: "FXEnableRemoveFromICloudDriveWarning", state: "present", type: "boolean", value: "false" }
+
+  # - Finder > View > As List:
+  #   defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+  - { domain: "com.apple.finder", key: "FXPreferredViewStyle", state: "present", type: "string", value: "Nlsv" }
+
+  # - Finder > View > Show Path Bar: true:
+  #   defaults write com.apple.finder ShowPathbar -bool true
+  - { domain: "com.apple.finder", key: "ShowPathbar", state: "present", type: "boolean", value: "true" }
+
+  # - '[macos] Finder > Preferences > Show all filename extensions: true':
+  #   defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+  - { domain: "NSGlobalDomain", key: "AppleShowAllExtensions", state: "present", type: "boolean", value: "true" }
+...

@@ -1,22 +1,10 @@
-[database]
-localhost ansible_connection=local
-
-# Raspberry pi
-[raspberrypi_3]
-#rpi ansible_ssh_host=172.16.42.8
-rpi ansible_ssh_host=172.16.42.9
-#rpi ansible_ssh_host=192.168.1.2
-#rpi ansible_ssh_host=192.168.1.189
-#rpi ansible_ssh_host=192.168.2.2
+[macbooks]
+laptop ansible_ssh_host=192.168.20.20
+#laptop ansible_ssh_host=192.168.20.20
+#localhost ansible_connection=local
+#ansible_python_interpreter = /usr/local/bin/python3
 
 #ansible_ssh_private_key_file = ~/.ssh/id_rsa
 
 #[raspberrypi_3:vars]
 #ansible_python_interpreter = /usr/local/bin/python
-
-[synologies]
-syno ansible_host=192.168.1.1
-#ansible_ssh_port=22222
-
-[macbooks]
-laptop ansible_host=192.168.1.11

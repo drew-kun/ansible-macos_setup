@@ -1,0 +1,64 @@
+---
+# References:
+# https://github.com/pawelgrzybek/dotfiles/blob/master/setup-defaults_finder.sh
+#
+# FINDER
+# defaults write com.apple.finder AppleShowAllFiles -string YES
+- name: '[defaults_finder] Show Hidden files in Finder'
+  osx_defaults:
+    domain: com.apple.finder
+    key: AppleShowAllFiles
+    state: present
+    type: string
+    value: 'YES'
+  notify: '[defaults_finder] Restart Finder'
+
+# defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+- name: '[defaults_finder] Finder > Preferences > Show all filename extensions: true'
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleShowAllExtensions
+    state: present
+    type: bool
+    value: yes
+  notify: '[defaults_finder] Restart Finder'
+
+# defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+- name: '[defaults_finder] Finder > Preferences > Show wraning before changing an extension: false'
+  osx_defaults:
+    domain: com.apple.finder
+    key: FXEnableExtensionChangeWarning
+    state: present
+    type: bool
+    value: no
+  notify: '[defaults_finder] Restart Finder'
+
+# defaults write com.apple.finder FXEnableRemoveFromICloudDriveWarning -bool false
+- name: '[defaults_finder] Finder > Preferences > Show wraning before removing from iCloud Drive: false'
+  osx_defaults:
+    domain: com.apple.finder
+    key: FXEnableRemoveFromICloudDriveWarning
+    state: present
+    type: bool
+    value: no
+  notify: '[defaults_finder] Restart Finder'
+
+# defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+- name: '[defaults_finder] Finder > View > As List'
+  osx_defaults:
+    domain: com.apple.finder
+    key: FXPreferredViewStyle
+    state: present
+    type: string
+    value: 'Nlsv'
+  notify: '[defaults_finder] Restart Finder'
+
+# defaults write com.apple.finder ShowPathbar -bool true
+- name: '[defaults_finder] Finder > View > Show Path Bar: true'
+  osx_defaults:
+    domain: com.apple.finder
+    key: ShowPathbar
+    state: present
+    type: bool
+    value: yes
+  notify: '[defaults_finder] Restart Finder'

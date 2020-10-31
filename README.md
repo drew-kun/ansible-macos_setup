@@ -54,6 +54,7 @@ Install via ansible-galaxy:
                            drew-kun.terminus_powerline\
                            drew-kun.macos_terminal \
                            drew-kun.ohmyzsh \
+                           drew-kun.mpd \
                            drew-kun.pf \
                            drew-kun.sshd
 

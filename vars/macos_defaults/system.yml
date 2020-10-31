@@ -1,0 +1,36 @@
+---
+macsetup_system:
+#- { domain: "com.apple.dock", key: "expose-animation-duration", type: "float", value: "0.12", global: true }
+
+# Configure ActivityMonitor look and behaviour:
+- { domain: "com.apple.ActivityMonitor", key: "IconType", type: "integer", value: "5" }
+- { domain: "com.apple.ActivityMonitor", key: "OpenMainWindow", type: "boolean", value: "true" }
+- { domain: "com.apple.ActivityMonitor", key: "SortColumn", type: "string", value: "CPUUsage" }
+
+# Configure MacOS system Languages:
+- { domain: "NSGlobalDomain", key: "AppleLanguages", type: "array", value: [ "en" ], global: true }
+
+# Configure Safari with Internal Debug Menu:
+- { domain: "com.apple.Safari", key: "IncludeInternalDebugMenu", type: "boolean", value: "true" }
+
+# References:
+# https://github.com/pawelgrzybek/dotfiles/blob/master/setup-macos.sh
+#
+# - System Preferences > General > Click in the scrollbar to: Jump to the spot that is clicked:
+#   defaults write -globalDomain "AppleScrollerPagingBehavior" -bool true
+- { domain: "NSGlobalDomain", key: "AppleScrollerPagingBehavior", type: "boolean", value: "true" }
+
+
+# - System Preferences > Desktop & Screen Saver > Start after: Never:
+# defaults -currentHost write com.apple.screensaver idleTime -int 0
+- { domain: "com.apple.screensaver", key: "idleTime", type: "integer", value: "0" }
+
+# KEYBOARD
+# - System Preferences > Keyboard > defaults write NSGlobalDomain KeyRepeat -int 2:
+# defaults write NSGlobalDomain KeyRepeat -int 2
+- { domain: "NSGlobalDomain", key: "KeyRepeat", type: "integer", value: "2" }
+
+# - System Preferences > Keyboard > defaults write NSGlobalDomain InitialKeyRepeat -int 15:
+# defaults write NSGlobalDomain InitialKeyRepeat -int 15
+- { domain: "NSGlobalDomain", key: "InitialKeyRepeat", type: "integer", value: "15" }
+...

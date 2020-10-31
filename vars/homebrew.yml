@@ -2,140 +2,115 @@
 # defaults file for ansible-macos_setup
 
 macsetup_homebrew_taps:
-  - homebrew/core
-  - homebrew/cask
-  - homebrew/cask-fonts     # Casks that install fonts (nerdfonts etc.)
-  - homebrew/cask-versions  # Alternate casks versions (e.g. betas, nightly releases, old versions): opera-developer
-  - homebrew/cask-drivers   # Casks that install drivers for various devices
-  - homebrew/cask-eid       # Casks that install electronic identity card software of various countries
+- homebrew/core
+- homebrew/cask
+- homebrew/cask-fonts     # Casks that install fonts (nerdfonts etc.)
+- homebrew/cask-versions  # Alternate casks versions (e.g. betas, nightly releases, old versions): opera-developer
+- homebrew/cask-drivers   # Casks that install drivers for various devices
+- homebrew/cask-eid       # Casks that install electronic identity card software of various countries
 
-  # Other taps:
-  - theseal/ssh-askpass # Askpass for KeepassXC ssh-agent integration
-  - homebrew/bundle     # Enables 'brew bundle' for using Brewfile (like Ruby Gemfi↳ le)
-  - gapple/services     # Enables 'brew services' command
-  - brona/iproute2mac   # Enables linux 'ip' set of commands
-  - jlhonora/lsusb      # Enables 'lsusb' command on macos
-  #- kevwil/patches     # Enables 'mutt' patches
+# Other taps:
+- theseal/ssh-askpass # Askpass for KeepassXC ssh-agent integration
+- homebrew/bundle     # Enables 'brew bundle' for using Brewfile (like Ruby Gemfi↳ le)
+- gapple/services     # Enables 'brew services' command
+- brona/iproute2mac   # Enables linux 'ip' set of commands
+- jlhonora/lsusb      # Enables 'lsusb' command on macos
+#- kevwil/patches     # Enables 'mutt' patches
 
 macsetup_homebrew_installed_packages:
-  - dockutil
-  - brew-cask-completion
-  - ssh-copy-id
-  - theseal/ssh-askpass/ssh-askpass   # ssh-agent integration for KeepassXC
-  - name: pv              # dep: gettext
-    install_options: with-gettext
-  - automake              # dep: autoconf
-  - cmake
-  - dpkg
-  - rpm
-  - docker                # dep: go
-  - ddclient
-  - easy-tag
-  - imagesnap
-  - imagemagick           # dep: xz,libtool
-  - iproute2mac           # linux 'ip' command stack. Strangely, impossible to install with full tap path.
-  - jlhonora/lsusb/lsusb
-  - lftp                  # ftps client
-  - name: openssh
-    install_options: with-ldns
-  - pidof                 # display PID number for a given process name (Armitage depends)
-  - p7zip                 # POSIX compatable 7zip archiver
-  - name: python
-    install_options:
-      - universal
-      - with-berkeley-db4
-      - with-tcl-tk
-  - rename
-  - tree
-  - wget
-  - svn
-  - git
-  - hub
-  - tmux
-  - tmux-cssh
-  - name: reattach-to-user-namespace
-    install_options:
-      - with-wrap-launchctl
-      - with-wrap-pbcopy-and-pbpaste
-  - mackup
-  - htop-osx
-  - cmatrix
-  - gnu-typist
-  - typespeed
-  - name: aspell
-    install_options:
-    - with-lang-en
-    - with-lang-uk
-    - with-lang-ru
-    - with-lang-fr
-    - with-lang-es
-  - name: weechat
-    install_options:
-      - with-aspell
-      - with-curl
-      - with-guile
-      - with-lua
-      - with-perl
-      - with-python
-      - with-ruby
-  - name: bitlbee
-    install_options:
-      - with-libotr
-  - name: mutt
-    install_options:
-      - with-debug
-      - with-gettext
-      - with-gpgme
-      - with-libidn
-      - with-s-lang
-  - mailcheck
-  - mc
-  - name: nmap
-    install_options:
-      - with-pygtk        # Build Zenmap GUI
-  - rainbarf              # CPU, Memory, battery status for tmux
+- ack
+- ag
+- aspell
+- automake              # dep: autoconf
+- brew-cask-completion
+- cmake
+- cmatrix
+- coreutils             # GNU versions of unix tools like ghead, gsed etc..
+- ctags
+- ddclient
+- docker                # dep: go
+- dockutil
+- dpkg
+- easy-tag
+- fd
+- fzy
+- git
+- gnu-typist
+- htop-osx
+- hub
+- imagemagick           # dep: xz,libtool
+- imagesnap
+- iproute2mac           # linux 'ip' command stack. Strangely, impossible to install with full tap path.
+- jlhonora/lsusb/lsusb
+- lftp                  # ftps client
+- mackup
+- mailcheck
+- mc
+- mutt
+- nmap
+- p7zip                 # POSIX compatable 7zip archiver
+- paperkey              # Extract just secret info out of OpenPGP secret keys
+- pidof                 # display PID number for a given process name (Armitage depends)
+- pv
+- pwgen                 # Secure password generator
+- python
+- qrencode              # Generate QR codes for gpg, wifi etc.
+- rainbarf              # CPU, Memory, battery status for tmux
+- reattach-to-user-namespace
+- rename
+- rpm
+- ssh-copy-id
+- svn
+- theseal/ssh-askpass/ssh-askpass   # ssh-agent integration for KeepassXC
+- tree
+- tmux
+- typespeed
+- weechat
+- bitlbee
+- wget
+- zbar                  # barcodes-reading tools
 
 macsetup_homebrew_uninstalled_packages: []
 
-macsetup_homebrew_cask_appdir: ~/Applications
-
 macsetup_homebrew_cask_apps:
-  - onyx
-  - appcleaner
-  - iterm2
-  - keka
-  - gpg-suite
-  - keepassxc
-  - alfred
-  - atom
-  - handbrake
-  - vlc
-  - virtualbox
-  - virtualbox-extension-pack
-  - vagrant
-  - tunnelblick
-  - transmission
-  - wireshark
-  - thunderbird
-  - firefox
-  - caskroom/versions/opera-developer
-  - google-chrome
-  - google-drive-file-stream  # for MacOS >= 10.11 (EI Captain)
-  - dropbox
-  - calibre
-  - github
-  - githubpulse
-  - launchcontrol
-  - libreoffice
-  - limechat
-  - filezilla
-  - monolingual
-  - skype
-  - viber
-  - telegram
-  - signal
-  - riot
-  - zenmap
+- alfred
+- appcleaner
+- atom
+- calibre
+- dropbox
+- element
+#- filezilla  # malware detected - https://github.com/Homebrew/homebrew-cask/pull/55583
+- firefox
+- github
+- githubpulse
+- google-chrome
+- google-drive-file-stream  # for MacOS >= 10.11 (EI Captain)
+- gpg-suite
+- handbrake
+- homebrew/cask-versions/opera-developer
+- iterm2
+- keka
+- keepassxc
+- launchcontrol
+- libreoffice
+- mactex                     # requires root password
+- monolingual
+- onyx
+- signal
+- skype
+#- telegram                  # must be installed from mas
+- thunderbird
+- transmission
+#- tunnelblick               # using wireguard instead of openvpn
+- vagrant
+- viber
+- virtualbox                 # requires root password
+- virtualbox-extension-pack  # requires root password
+- visual-studio-code
+- vlc
+- wireshark                  # requires root password
+- zenmap                     # requires root password
 
-macsetup_homebrew_uninstalled_cask_apps: [ colortester ]
+macsetup_homebrew_cask_uninstalled_apps:
+- colortester
 ...

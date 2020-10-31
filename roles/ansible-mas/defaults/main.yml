@@ -1,0 +1,32 @@
+---
+# defaults file for ansible-mas
+
+mas_email: ""
+
+mas_password: ""
+
+
+mas_installed_apps:
+- { id: 425264550, name: "Blackmagic Disk Speed Test" }
+- { id: 803453959, name: "Slack" }
+- { id: 747648890, name: "Telegram" }
+- { id: 926036361, name: "LastPass Password Manager" }
+- { id: 823766827, name: "OneDrive" }
+- { id: 883878097, name: "Server" }
+- { id: 973213640, name: "MSG Viewer for Outlook" }
+- { id: 497799835, name: "Xcode" }
+- { id: 1451685025, name: "Wireguard" }
+- { id: 1037126344, name: "Apple Configurator 2" }
+- { id: 1116599239, name: "NordVPN IKE" }
+
+mas_upgrade_all_apps: no
+
+mas_signin_dialog: no
+
+macos_softwareupdate:
+  frequency: 1
+  recommended: false
+  install: false
+  debug: false
+  webkit: false
+...

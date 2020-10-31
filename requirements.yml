@@ -1,0 +1,26 @@
+- src: https://github.com/geerlingguy/ansible-role-homebrew.git
+  name: geerlingguy.homebrew
+
+- src: https://github.com/elliotweiser/ansible-osx-command-line-tools.git
+  name: elliotweiser.osx-command-line-tools
+
+- src: https://github.com/feffi/ansible-macos-defaults.git
+  name: feffi.macos-defaults
+
+#- src: https://github.com/drew-kun/ansible-macdock.git
+#  name: drew-kun.macdock
+
+- src: https://github.com/drew-kun/ansible-nerdfonts.git
+  name: drew-kun.nerdfonts
+
+- src: https://github.com/drew-kun/ansible-terminus_powerline.git
+  name: drew-kun.terminus_powerline
+
+- src: https://github.com/drew-kun/ansible-macos_terminal.git
+  name: drew-kun.macos_terminal
+
+- src: https://github.com/drew-kun/ansible-ohmyzsh.git
+  name: drew-kun.ohmyzsh
+
+- src: https://github.com/drew-kun/ansible-vim.git
+  name: drew-kun.vim

@@ -1,38 +1,132 @@
 ---
 - hosts: macbooks
 #- hosts: localhost
-  #connection: local
+#  connection: local
 
   vars_files:
-    - vars/homebrew.yml
-    - vars/dock.yml
+  - vars/homebrew.yml
+  - vars/dock.yml
+  - vars/vim.yml
+  - vars/vault.yml
+  - vars/macos_defaults/system.yml
+  - vars/macos_defaults/finder.yml
 
-  # This variables are used in multiple roles
   vars:
-    macsetup_homebrew_cask_appdir: ~/Applications # also used in ./vars/dock.yml
+    #ansible_python_interpreter: /usr/local/bin/python3
+    macsetup_homebrew_cask_appdir: ~/Applications  # also used in ./vars/dock.yml
+
+  pre_tasks:
+  - name: "[pre_tasks] Include vars from Darwin.yml"
+    include_vars: Darwin.yml
+    when: not ansible_distribution_version.startswith('10.13')
+
+  # Starting with MacOS 10.13 the Grab app is changed in favour of Screenshot:
+  - name: "[pre_tasks] Include vars from Darwin_pre_10.13.yml if running pre-Mojave MacOS version"
+    include_vars: Darwin_pre_10.13.yml
+    when: ansible_distribution_version.startswith('10.13')
 
   roles:
-#    - role: drew-kun.homebrew
-#      homebrew_installed_packages: "{{ macsetup_homebrew_installed_packages }}"
-#      homebrew_uninstalled_packages: []
-#      homebrew_upgrade_all_packages: no
-#      homebrew_taps: "{{ macsetup_homebrew_taps }}"
-#      homebrew_cask_apps: "{{ macsetup_homebrew_cask_apps }}"
-#      homebrew_cask_uninstalled_apps: []
-#      homebrew_cask_appdir: "{{ macsetup_homebrew_cask_appdir }}"
-#      homebrew_use_brewfile: yes
-#      homebrew_brewfile_dir: '~'
+#  - role: geerlingguy.homebrew
+#    homebrew_upgrade_all_packages: no
+#    homebrew_installed_packages: "{{ macsetup_homebrew_installed_packages }}"
+#    homebrew_uninstalled_packages: "{{ macsetup_homebrew_uninstalled_packages }}"
+#    homebrew_cask_apps: "{{ macsetup_homebrew_cask_apps }}"
+#    homebrew_cask_uninstalled_apps: "{{ macsetup_homebrew_cask_uninstalled_apps }}"
+#    homebrew_cask_appdir: ~/Applications
+#    homebrew_use_brewfile: yes
+#    homebrew_brewfile_dir: '~'
 
-#    - role: drew-kun.macdock
-#      macdock_remove_all: no
-#      macdock_remove_items: "{{ macsetup_remove_dockitems }}"
-#      macdock_add_items: "{{ macsetup_add_dockitems }}"
+#  - role: ansible-mas
+#    mas_email: "{{ vault_mas_email }}"
+#    mas_password: "{{ vault_mas_password }}"
+#    mas_upgrade_all_apps: no
 
-#    - role: drew-kun.macos_terminal
+  - role: drew-kun.macdock
+    macdock_remove_all: no
+    macdock_remove_items: "{{ macsetup_remove_dockitems }}"
+    macdock_add_items: "{{ macsetup_add_dockitems }}"
 
-#    - role: drew-kun.ohmyzsh
+#  - role: drew-kun.nerdfonts  # TESTED
 
-#    - role: drew-kun.pf
+#  - role: drew-kun.terminus_powerline # TESTED
 
-#    - role: drew-kun.sshd
+#  - role: drew-kun.macos_terminal  # TESTED
+#    #macos_terminal_colorscheme: Solarized_Dark_Custom
+#    #macos_terminal_colorscheme: Nord_Custom
+#    macos_terminal_colorscheme: Cipherpunk
+
+#  - role: drew-kun.ohmyzsh  # TESTED  (ColorLS does not work)
+#
+#  - role: drew-kun.vim  # TESTED
+#    vim_cleanup: yes  # for tests only
+#    vim_env: users
+#    vim_plugin_manager: plug
+#    vim_emoji_git_integration: no
+#    vim_neovim: yes
+#    vim_users: "{{ vim_vault_users }}"
+#    #vim_colorscheme: solarized
+#    #vim_colorscheme: nord
+#    vim_colorscheme: cipherpunk
+#    vim_plugins: "{{ vim_github_plugins + vim_asyncomplete_plugins }}"
+#
+#  - role: drew-kun.mpd
+
+#  - role: drew-kun.pf
+
+#  - role: drew-kun.sshd
+#    sshd_certs: yes
+#    sshd_cert_id: "{{ vault_sshd_cert_id }}"
+#    sshd_users: "{{ vault_sshd_users }}"
+
+
+# DEFAULTS:
+#  - role: feffi.macos-defaults
+#    macos_defaults:
+#      defaults: "{{ macsetup_system + macsetup_finder }}"
+
+#  post_tasks:
+#  # REBOOT
+#  # Since for now there is no way to run external handlers when change is detected within imported role,
+#  # rebooting the managed host unconditionaly for changes in NSGlobalDomain to take effect.
+#  - name: '[macsetup] Reboot the managed host to reload kernel modules'
+#    shell: 'sleep 1 && shutdown -r now "Reboot triggered by Ansible" && sleep 1'
+#    async: 1
+#    poll: 0
+#    become: yes
+#    tags:
+#    - macsetup
+#    - macsetup_reboot
+#
+#  # ansible_ssh_host variable is set in ansible inventory (hosts) file
+#  - name: '[macsetup] Waiting for managed host to come back after reboot'
+#    wait_for:
+#      host: "{{ ansible_ssh_host }}"
+#      port: 22
+#      delay: 1
+#    delegate_to: localhost
+#    tags:
+#    - macsetup
+#    - macsetup_reboot
+
+
+#  - import_role:
+#      name: feffi.macos-defaults
+#    vars:
+#      macos_defaults:
+#        defaults: "{{ macsetup_system + macsetup_finder }}"
+#    notify: '[defaults_finder] Restart Finder'
+#    changed_when: true
+
+  #  Since there is no way to run external handlers when change is detected within imported role,
+  #  we have to use these ugly tasks and handlers instead of elegant feffi.macos-defaults role.
+#  - import_tasks: tasks/defaults_system.yml
+#  - import_tasks: tasks/defaults_finder.yml
+
+#  handlers:
+#  # Or use import_tasks: handlers/defaults_system.yml (include_tasks would not work)
+#  - name: '[defaults_finder] Restart Finder'
+#    command: Killall Finder
+#
+#  - name: '[defaults_system] Re-read keyboard defaults'
+#    command: 'defautls read NSGlobalDomain'
 ...

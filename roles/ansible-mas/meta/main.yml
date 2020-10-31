@@ -1,0 +1,23 @@
+---
+galaxy_info:
+
+  role_name: mas
+
+  author: desgyz (Edited by drew-kun)
+
+  description: Mac App Store CLI installation for macOS
+
+  license: BSD, MIT
+
+  min_ansible_version: 2.5.6
+
+  platforms:
+  - name: MacOSX
+    versions:
+    - all
+
+  galaxy_tags:
+  - development
+  - system
+  - packaging
+...

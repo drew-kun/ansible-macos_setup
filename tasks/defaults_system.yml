@@ -1,0 +1,60 @@
+---
+- name: '[macos] Configure MacOS system Languages'
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleLanguages
+    type: array
+    value:
+    - en
+
+- name: '[macos] Configure Safari with Internal Debug Menu'
+  osx_defaults:
+    domain: com.apple.Safari
+    key: IncludeInternalDebugMenu
+    type: bool
+    value: true
+    state: present
+
+# References:
+# https://github.com/pawelgrzybek/dotfiles/blob/master/setup-macos.sh
+#
+# defaults write -globalDomain "AppleScrollerPagingBehavior" -bool true
+- name: '[macos] System Preferences > General > Click in the scrollbar to: Jump to the spot that is clicked'
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleScrollerPagingBehavior
+    type: bool
+    value: true
+    state: present
+
+# defaults -currentHost write com.apple.screensaver idleTime -int 0
+- name: '[macos] System Preferences > Desktop & Screen Saver > Start after: Never'
+  osx_defaults:
+    domain: com.apple.screensaver
+    host: currentHost
+    key: idleTime
+    type: int
+    value: 0
+    state: present
+
+# KEYBOARD
+# defaults write NSGlobalDomain KeyRepeat -int 2
+- name: '[macos] System Preferences > Keyboard > defaults write NSGlobalDomain KeyRepeat -int 2'
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: KeyRepeat
+    type: int
+    value: 2
+    state: present
+  notify: '[defaults_system] Re-read keyboard defaults'
+
+# defaults write NSGlobalDomain InitialKeyRepeat -int 15
+- name: '[macos] System Preferences > Keyboard > defaults write NSGlobalDomain InitialKeyRepeat -int 15'
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: InitialKeyRepeat
+    type: int
+    value: 15
+    state: present
+  notify: '[defaults_system] Re-read keyboard defaults'
+...

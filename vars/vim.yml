@@ -1,0 +1,71 @@
+---
+# Add this vim plugins to the default list:
+vim_github_plugins:
+- { name: 'tpope/vim-sensible' }             # Starting point for vim configuration
+- { name: 'vim-airline/vim-airline' }        # Lightweight vimscrip-based statusline
+- { name: 'vim-airline/vim-airline-themes' } # vim-airline theme collection
+# - { name: 'arcticicestudio/nord-vim' }       # another neat vim-theme
+# - { name: 'edkolev/tmuxline.vim' }           # tmux status line generator with vim-airline integration
+- { name: 'w0rp/ale' }                       # Asynchronous syntastic alternative (airline integration)
+- { name: 'tangledhelix/vim-kickstart', opts: "'for': 'kickstart'" } # Kickstart syntax (file ext must be '.ks')
+- { name: 'junegunn/vim-emoji', opts: "'on': 'Emoji'" }              # EMOJI
+- { name: 'vim-scripts/bash-support.vim', opts: "'for': 'sh'" }      # Bash files syntax highlighting
+- { name: 'junegunn/fzf.vim', opts: "'on': 'Files'" }                # Asynchronous alternative to command-t and ctrlp
+- { name: 'junegunn/fzf', opts: "'dir': '~/.fzf', 'do': './install --all'" }  # General purpose cli search engine
+- { name: 'yuki-ycino/fzf-preview.vim', opts: "'on': 'Files'" }
+- { name: 'mhinz/vim-signify' }         # Fast alternative to slow 'airblade/vim-gitgutter' (show git signatures)
+- { name: 'tpope/vim-fugitive' }        # Git Integration (statusline git branch and changes + Gcommands)
+- { name: 'hashivim/vim-vagrant', opts: "'for': 'ruby'" }  # :Vagrant command, with tab completion of subcommands
+- { name: 'hashivim/vim-terraform', opts: "'for': ['tf', 'tfstate']" }  # :Terraform command, with tab completion
+- { name: 'pearofducks/ansible-vim', opts: "'for': ['yaml.ansible', 'ansible_hosts', 'jinja2']" } # Ansible syntax
+- { name: 'lervag/vimtex', opts: "'for': 'tex'" }      # LaTeX syntax
+- { name: 'vim-ruby/vim-ruby', opts: "'for': 'ruby'" } # Rubi syntax hightlighting
+- { name: 'tpope/vim-rails', opts: "'for': 'ruby'" }   # Rails (ruby) syntax hightlighting
+- { name: 'Matt-Deacalion/vim-systemd-syntax', opts: "'for': ['systemd', 'networkd']" } # Systemd Unit Files syntax
+- { name: 'scrooloose/nerdtree' }       # Navigation (files and folders)
+- { name: 'tpope/vim-endwise' }         # End if, do, def etc. automatically. Combines with 'Raimondi/delimitMate'
+- { name: 'Raimondi/delimitMate' }      # Automatic closing of quotes, parenthesis, brackets, etc.
+# - { name: 'vim-python/python-syntax', opts: "'for': 'python'" }                   # Python syntax (shebang)
+- { name: 'numirias/semshi', opts: "'for': 'python', 'do': ':UpdateRemotePlugins'" }  # pip3 install pynvim --upgrade
+- { name: 'python-mode/python-mode', opts: "'branch': 'develop', 'for': 'python'" } # Python IDE, remove whitespaces
+- { name: 'tmhedberg/SimpylFold', opts: "'for': 'python'" }                         # Improved Python folding
+- { name: 'jpalardy/vim-slime', opts: "'for': ['python', 'ruby', 'perl']" }         # REPL languages
+- { name: 'xolox/vim-misc', opts: "'on': ['Note', 'DeleteNote', 'SearchNotes']" }   # Required by 'xolox/vim-notes'
+- { name: 'xolox/vim-notes', opts: "'on': ['Note', 'DeleteNote', 'SearchNotes']" }  # Take handy notes in vim
+- { name: 'vim-scripts/MatchTag' }      # Highlight the matching HTML/XML tag when the cursor is positioned on a tag
+- { name: 'ryanoasis/vim-devicons' }    # Add icons to plugins (Must be loaded after all other plugins in .vimrc)
+- { name: 'tpope/vim-commentary' }      # Flexible comments (just add your filetype and 'commentstring')
+- { name: 'tpope/vim-surround' }        # Quickly add/remove parentheses, brackets, quotes, XML tags etc.
+- { name: 'romainl/vim-qf' }            # Settings for location and qickfix list/window
+- { name: 'nathanaelkane/vim-indent-guides', opts: "'on': 'IndentGuidesToggle'" }   # show lines for indentations
+- { name: 'godlygeek/tabular' }          # Line up text using 'Tab' command (must come before vim-markdown)
+- { name: 'plasticboy/vim-markdown', opts: "'for': 'markdown'" }    # Markdown Editor ***
+- { name: 'tpope/vim-repeat' }          # Useful for markup languages ***
+- { name: 'machakann/vim-highlightedyank' }  # Highlight what you have yanked
+#- { name: 'easymotion/vim-easymotion' } # Type your code faster. TUTORIAL NEEDED
+#- { name: 'editorconfig/editorconfig-vim' } # Maintain consistent coding styles ((https://editorconfig.org/)
+
+# Some interesting Plugins:
+#- { name: 'rstacruz/sparkup' }          # HTML tags completion and CSS stuff. TUTORIAL NEEDED
+#- { name: 'SirVer/ultisnips' }          # Fast snippet solution
+#- { name: 'honza/vim-snippets' }        # Snippets required by 'SirVer/ultisnips'
+#- { name: 'vim-scripts/matchit.zip' }   # Match % not only to characters, but to words and more...
+
+# COMPLETIONS
+# 'ncm2/ncm2' is the python-based alternative (see https://github.com/ncm2/ncm2/pull/23)
+#- { name: 'neoclide/coc.nvim', opts: "'tag': '*', 'do': { -> coc#util#install()}" } # full LSP support as VSCode
+vim_asyncomplete_plugins:
+- { name: 'prabirshrestha/asyncomplete.vim' }             # Fork of ncm pure vimscript (no python needed)
+- { name: 'prabirshrestha/async.vim' }                    # Normalize async job control api for vim and neovim
+- { name: 'prabirshrestha/asyncomplete-buffer.vim' }      # Buffer autocompletion source
+- { name: 'Shougo/neco-syntax' }                          # Required by prabishrestha/asyncomplete-necosyntax.vim
+- { name: 'prabirshrestha/asyncomplete-necosyntax.vim' }  # Syntax source via Shougo/neco-syntax
+- { name: 'Shougo/neco-vim' }                             # Required by prabishrestha/asyncomplete-necovim.vim
+- { name: 'prabirshrestha/asyncomplete-necovim.vim' }     # Syntax autocompletion source via Shougo/neco-vim
+- { name: 'prabirshrestha/vim-lsp' }                      # Language Server Protocol (LSP) support
+- { name: 'prabirshrestha/asyncomplete-lsp.vim' }         # Asyncomplete LSP source
+- { name: 'prabirshrestha/asyncomplete-file.vim' }        # Asyncomplete filenames source
+- { name: 'prabirshrestha/asyncomplete-emoji.vim' }       # EMOJI autocompletions
+- { name: 'prabirshrestha/asyncomplete-omni.vim' }        # Omni autocompletion source
+- { name: 'andreypopp/asyncomplete-ale.vim' }             # LSP autocompletion source via 'w0rp/ale'
+...
