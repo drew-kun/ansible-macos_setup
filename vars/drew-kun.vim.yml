@@ -1,4 +1,15 @@
 ---
+vim_cleanup: yes  # for tests only
+vim_env: users
+vim_plugin_manager: plug
+vim_emoji_git_integration: no
+vim_neovim: yes
+vim_users: "{{ vim_vault_users }}"
+vim_colorscheme: cipherpunk
+  #vim_colorscheme: solarized
+  #vim_colorscheme: nord
+vim_plugins: "{{ vim_github_plugins + vim_asyncomplete_plugins }}"
+
 # Add this vim plugins to the default list:
 vim_github_plugins:
 - { name: 'tpope/vim-sensible' }             # Starting point for vim configuration

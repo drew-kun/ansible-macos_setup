@@ -1,5 +1,5 @@
 ---
-macsetup_system:
+macsetup_defaults_system:
 #- { domain: "com.apple.dock", key: "expose-animation-duration", type: "float", value: "0.12", global: true }
 
 # Configure ActivityMonitor look and behaviour:

@@ -1,5 +1,5 @@
 ---
-macsetup_remove_dockitems:
+macdock_remove_items:
 - Siri
 - Launchpad
 - Mail
@@ -19,7 +19,7 @@ macsetup_remove_dockitems:
 - Music
 - TV
 
-macsetup_add_dockitems:
+macdock_add_items:
 # others
 - name: Applications
   path: "/Applications"

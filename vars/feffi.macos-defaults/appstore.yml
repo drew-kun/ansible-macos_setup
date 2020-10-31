@@ -1,0 +1,14 @@
+---
+macsetup_defaults_appstore:
+  # - Setup macOS Software Update:
+  #   defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+  - { domain: "com.apple.SoftwareUpdate", key: "ScheduleFrequency", state: "present", type: "integer", value: "1" }
+
+  # - Setup Debug Menu:
+  #   defaults write com.apple.appstore ShowDebugMenu -bool false
+  - { domain: "com.apple.appstore", key: "ShowDebugMenu", state: "present", type: "boolean", value: "false" }
+
+  # - Setup DevExtras Menu:
+  #   defaults write com.apple.appstore WebKitDeveloperExtras -bool false
+  - { domain: "com.apple.appstore", key: "WebKitDeveloperExtras", state: "present", type: "boolean", value: "false" }
+...

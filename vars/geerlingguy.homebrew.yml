@@ -1,23 +1,29 @@
 ---
-# defaults file for ansible-macos_setup
+homebrew_upgrade_all_packages: no
+#homebrew_installed_packages: "{{ macsetup_homebrew_installed_packages }}"
+#homebrew_uninstalled_packages: "{{ macsetup_homebrew_uninstalled_packages }}"
+#homebrew_cask_apps: "{{ macsetup_homebrew_cask_apps }}"
+#homebrew_cask_uninstalled_apps: "{{ macsetup_homebrew_cask_uninstalled_apps }}"
+homebrew_cask_appdir: ~/Applications
+homebrew_use_brewfile: yes
+homebrew_brewfile_dir: '~'
 
-macsetup_homebrew_taps:
+homebrew_taps:
 - homebrew/core
 - homebrew/cask
 - homebrew/cask-fonts     # Casks that install fonts (nerdfonts etc.)
 - homebrew/cask-versions  # Alternate casks versions (e.g. betas, nightly releases, old versions): opera-developer
-- homebrew/cask-drivers   # Casks that install drivers for various devices
-- homebrew/cask-eid       # Casks that install electronic identity card software of various countries
+#- homebrew/cask-drivers   # Casks that install drivers for various devices
 
 # Other taps:
-- theseal/ssh-askpass # Askpass for KeepassXC ssh-agent integration
-- homebrew/bundle     # Enables 'brew bundle' for using Brewfile (like Ruby Gemfi↳ le)
-- gapple/services     # Enables 'brew services' command
-- brona/iproute2mac   # Enables linux 'ip' set of commands
-- jlhonora/lsusb      # Enables 'lsusb' command on macos
-#- kevwil/patches     # Enables 'mutt' patches
+#- homebrew/bundle      # Enables 'brew bundle' for using Brewfile (like Ruby Gemfi↳ le)
+#- gapple/services      # Enables 'brew services' command
+#- brona/iproute2mac    # Enables linux 'ip' set of commands
+#- kevwil/patches       # Enables 'mutt' patches
+- jlhonora/lsusb       # Enables 'lsusb' command on macos
+- theseal/ssh-askpass  # Askpass for KeepassXC ssh-agent integration
 
-macsetup_homebrew_installed_packages:
+homebrew_installed_packages:
 - ack
 - ag
 - aspell
@@ -70,9 +76,9 @@ macsetup_homebrew_installed_packages:
 - wget
 - zbar                  # barcodes-reading tools
 
-macsetup_homebrew_uninstalled_packages: []
+homebrew_uninstalled_packages: []
 
-macsetup_homebrew_cask_apps:
+homebrew_cask_apps:
 - alfred
 - appcleaner
 - atom
@@ -111,6 +117,6 @@ macsetup_homebrew_cask_apps:
 - wireshark                  # requires root password
 - zenmap                     # requires root password
 
-macsetup_homebrew_cask_uninstalled_apps:
+homebrew_cask_uninstalled_apps:
 - colortester
 ...

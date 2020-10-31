@@ -1,10 +1,7 @@
 ---
-# defaults file for ansible-mas
-
-mas_email: ""
-
-mas_password: ""
-
+mas_email: "{{ vault_mas_email }}"
+mas_password: "{{ vault_mas_password }}"
+#mas_upgrade_all_apps: yes
 
 mas_installed_apps:
 - { id: 425264550, name: "Blackmagic Disk Speed Test" }
@@ -18,15 +15,4 @@ mas_installed_apps:
 - { id: 1451685025, name: "Wireguard" }
 - { id: 1037126344, name: "Apple Configurator 2" }
 - { id: 1116599239, name: "NordVPN IKE" }
-
-mas_upgrade_all_apps: no
-
-mas_signin_dialog: no
-
-macos_softwareupdate:
-  frequency: 1
-  recommended: false
-  install: false
-  debug: false
-  webkit: false
 ...

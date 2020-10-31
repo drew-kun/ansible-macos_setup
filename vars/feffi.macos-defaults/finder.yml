@@ -1,5 +1,5 @@
 ---
-macsetup_finder:
+macsetup_defaults_finder:
   # - Show Hidden files in Finder:
   #   defaults write com.apple.finder AppleShowAllFiles -string YES
   - { domain: "com.apple.finder", key: "AppleShowAllFiles", state: "present", type: "string", value: "YES" }

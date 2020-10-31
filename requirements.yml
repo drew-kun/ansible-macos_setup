@@ -7,8 +7,11 @@
 - src: https://github.com/feffi/ansible-macos-defaults.git
   name: feffi.macos-defaults
 
-#- src: https://github.com/drew-kun/ansible-macdock.git
-#  name: drew-kun.macdock
+- src: https://github.com/drew-kun/ansible-mas.git
+  name: drew-kun.mas
+
+- src: https://github.com/drew-kun/ansible-macdock.git
+  name: drew-kun.macdock
 
 - src: https://github.com/drew-kun/ansible-nerdfonts.git
   name: drew-kun.nerdfonts
