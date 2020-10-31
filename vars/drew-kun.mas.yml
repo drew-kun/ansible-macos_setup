@@ -5,7 +5,7 @@ mas_password: "{{ vault_mas_password }}"
 
 mas_installed_apps:
 - { id: 425264550, name: "Blackmagic Disk Speed Test" }
-- { id: 803453959, name: "Slack" }
+#- { id: 803453959, name: "Slack" }
 - { id: 747648890, name: "Telegram" }
 - { id: 926036361, name: "LastPass Password Manager" }
 - { id: 823766827, name: "OneDrive" }
