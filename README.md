@@ -36,12 +36,16 @@ Dependencies
 ------------
 
  - [elliotweiser.osx-command-line-tools][dep-osx-clt-role]
- - [drew-kun.homebrew][homebrew-galaxy-link]
+ - [geerlingguy.homebrew][homebrew-galaxy-link]
+ - [feffi.macos-defaults][macos-defaults-role-link]
+ - [drew-kun.mas][mas-galaxy-link]
  - [drew-kun.macdock][macdock-galaxy-link]
- - [drew-kun.terminus_powerline][terminus_powerline-galaxy-link]
  - [drew-kun.nerdfonts][nerdfonts-galaxy-link]
+ - [drew-kun.terminus_powerline][terminus_powerline-galaxy-link]
  - [drew-kun.macos_terminal][macos_terminal-galaxy-link]
  - [drew-kun.ohmyzsh][ohmyzsh-galaxy-link]
+ - [drew-kun.vim][vim-galaxy-link]
+ - [drew-kun.mpd][mpd-galaxy-link]
  - [drew-kun.pf][pf-galaxy-link]
  - [drew-kun.sshd][sshd-galaxy-link]
 
@@ -64,13 +68,17 @@ Author Information
 
 Andrew Shagayev | [e-mail](mailto:drewshg@gmail.com)
 
-[homebrew-galaxy-link]: https://galaxy.ansible.com/drew-kun/homebrew/
+[homebrew-galaxy-link]: https://galaxy.ansible.com/geerlingguy/homebrew/
 [dep-osx-clt-role]: https://galaxy.ansible.com/elliotweiser/osx-command-line-tools/
+[macos-defaults-role-link]: https://github.com/feffi/ansible-macos-defaults
+[mas-galaxy-link]: https://galaxy.ansible.com/drew-kun/mas/
 [macdock-galaxy-link]: https://galaxy.ansible.com/drew-kun/macdock/
 [nerdfonts-galaxy-link]: https://galaxy.ansible.com/drew-kun/nerdfonts/
 [terminus_powerline-galaxy-link]: https://galaxy.ansible.com/drew-kun/terminus_powerline/
 [macos_terminal-galaxy-link]: https://galaxy.ansible.com/drew-kun/macos_terminal/
 [ohmyzsh-galaxy-link]: https://galaxy.ansible.com/drew-kun/ohmyzsh/
+[vim-galaxy-link]: https://galaxy.ansible.com/drew-kun/vim/
+[mpd-galaxy-link]: https://galaxy.ansible.com/drew-kun/mpd/
 [pf-galaxy-link]: https://galaxy.ansible.com/drew-kun/pf/
 [sshd-galaxy-link]: https://galaxy.ansible.com/drew-kun/sshd/
 
