@@ -1,0 +1,22 @@
+---
+- hosts: deb
+
+  vars_files:
+  - vars/drew-kun.vim.yml
+
+  pre_tasks:
+  - debug:
+      msg:
+      - "{{ ansible_os_family }}"
+      - "{{ ansible_distribution }}"
+      - "{{ ansible_distribution_major_version }}"
+
+  roles:
+  - role: drew-kun.vim
+    vim_users:
+    - debian
+#  - role: drew-kun.mpd
+#    mpd_ncmpcpp_users:
+#    - debian
+#    - root
+...

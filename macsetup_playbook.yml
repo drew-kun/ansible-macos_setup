@@ -1,7 +1,10 @@
 ---
-- hosts: macbooks
-#- hosts: localhost
-#  connection: local
+#- hosts: macbooks
+
+- hosts: localhost
+  connection: local
+  vars:
+    ansible_python_interpreter: '/usr/local/bin/python3'
 
   vars_files:
   - vars/geerlingguy.homebrew.yml
@@ -26,7 +29,7 @@
   roles:
 #  - role: geerlingguy.homebrew  # TESTED
 
-#  - role: drew-kun.mas
+#  - role: drew-kun.mas  # TESTED
 
 #  - role: drew-kun.macdock  # TESTED
 
@@ -41,7 +44,7 @@
 #
 #  - role: drew-kun.vim  # TESTED
 
-#  - role: drew-kun.mpd
+#  - role: drew-kun.mpd  # TESTED
 
 #  - role: drew-kun.pf
 
@@ -58,6 +61,32 @@
 #        macsetup_defaults_system +
 #        macsetup_defaults_finder +
 #        macsetup_defaults_appstore }}"
+
+  tasks:
+  - name:  '[macsetup] Copy com.apple.symbolichotkeys.plist to /tmp'
+    copy:
+      src: files/com.apple.symbolichotkeys.plist
+      dest: /tmp/com.apple.symbolichotkeys.plist
+    tags:
+    - macsetup
+
+  - name: '[debian] Calculate sha512 for com.apple.symbolichotkeys.plist'
+    shell: >
+      sha512sum {{ item }} | cut -d ' ' -f1
+    register: macsetup_hotkeys_sha512
+    with_items:
+    - /tmp/com.apple.symbolichotkeys.plist
+    - ~/Library/Preferences/com.apple.symbolichotkeys.plist
+    changed_when: false
+    tags:
+    - macsetup
+
+  - name:  '[macsetup] Import Symbolic Hotkeys property list'
+    command: defaults import com.apple.symbolichotkeys.plist /tmp/symbolichotkeys.plist
+    changed_when: >
+      macsetup_hotkeys_sha512.results[0].stdout not in macsetup_hotkeys_sha512.results[1].stdout
+    tags:
+    - macsetup
 
 #  post_tasks:
 #  ## REBOOT

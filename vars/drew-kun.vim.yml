@@ -1,13 +1,13 @@
 ---
-vim_cleanup: yes  # for tests only
+vim_cleanup: no  # for tests only
 vim_env: users
 vim_plugin_manager: plug
 vim_emoji_git_integration: no
 vim_neovim: yes
 vim_users: "{{ vim_vault_users }}"
-vim_colorscheme: cipherpunk
-  #vim_colorscheme: solarized
-  #vim_colorscheme: nord
+#vim_colorscheme: cipherpunk
+vim_colorscheme: solarized
+#vim_colorscheme: nord
 vim_plugins: "{{ vim_github_plugins + vim_asyncomplete_plugins }}"
 
 # Add this vim plugins to the default list:
@@ -21,11 +21,55 @@ vim_github_plugins:
 - { name: 'tangledhelix/vim-kickstart', opts: "'for': 'kickstart'" } # Kickstart syntax (file ext must be '.ks')
 - { name: 'junegunn/vim-emoji', opts: "'on': 'Emoji'" }              # EMOJI
 - { name: 'vim-scripts/bash-support.vim', opts: "'for': 'sh'" }      # Bash files syntax highlighting
-- { name: 'junegunn/fzf.vim', opts: "'on': 'Files'" }                # Asynchronous alternative to command-t and ctrlp
-- { name: 'junegunn/fzf', opts: "'dir': '~/.fzf', 'do': './install --all'" }  # General purpose cli search engine
-- { name: 'yuki-ycino/fzf-preview.vim', opts: "'on': 'Files'" }
-- { name: 'mhinz/vim-signify' }         # Fast alternative to slow 'airblade/vim-gitgutter' (show git signatures)
+# General purpose cli search engine:
+- { name: 'junegunn/fzf', opts: "'dir': '~/.fzf', 'do': './install --all', 'on': [
+    'Files',
+    'GFiles',
+    'Buffers',
+    'Colors',
+    'Rg',
+    'Ag',
+    'Lines',
+    'BLines',
+    'Tags',
+    'BTags',
+    'Marks',
+    'Windows',
+    'Locate',
+    'History',
+    'Snippets',
+    'Commits',
+    'BCommits',
+    'Commands',
+    'Maps',
+    'Helptags',
+    'Filetypes' ]" }
+- { name: 'junegunn/fzf.vim', opts: "'on': [
+    'Files',
+    'GFiles',
+    'Buffers',
+    'Colors',
+    'Rg',
+    'Ag',
+    'Lines',
+    'BLines',
+    'Tags',
+    'BTags',
+    'Marks',
+    'Windows',
+    'Locate',
+    'History',
+    'Snippets',
+    'Commits',
+    'BCommits',
+    'Commands',
+    'Maps',
+    'Helptags',
+    'Filetypes' ]" }
+#- { name: 'yuki-ycino/fzf-preview.vim', opts: "'on': 'Files'" }  # Could not get it work
+- { name: 'junegunn/vim-github-dashboard', opts: "'on': ['GHDashboard', 'GHActivity']" }
 - { name: 'tpope/vim-fugitive' }        # Git Integration (statusline git branch and changes + Gcommands)
+- { name: 'mhinz/vim-signify' }         # Fast alternative to slow 'airblade/vim-gitgutter' (show git signatures)
 - { name: 'hashivim/vim-vagrant', opts: "'for': 'ruby'" }  # :Vagrant command, with tab completion of subcommands
 - { name: 'hashivim/vim-terraform', opts: "'for': ['tf', 'tfstate']" }  # :Terraform command, with tab completion
 - { name: 'pearofducks/ansible-vim', opts: "'for': ['yaml.ansible', 'ansible_hosts', 'jinja2']" } # Ansible syntax

@@ -25,7 +25,7 @@ homebrew_taps:
 
 homebrew_installed_packages:
 - ack
-- ag
+- ag                    # fast asynchronous fuzzy finder
 - aspell
 - automake              # dep: autoconf
 - brew-cask-completion
@@ -64,6 +64,7 @@ homebrew_installed_packages:
 - rainbarf              # CPU, Memory, battery status for tmux
 - reattach-to-user-namespace
 - rename
+- ripgrep               # faster ag alternative
 - rpm
 - ssh-copy-id
 - svn
